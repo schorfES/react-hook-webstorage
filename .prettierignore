@@ -1,0 +1,6 @@
+coverage/
+*.js
+*.jsx
+*.ts
+*.tsx
+*.mjs
