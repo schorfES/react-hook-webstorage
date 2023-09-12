@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig.json",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "paths": {
+      "src/*": ["./src/*"]
+    }
+  },
+  "include": ["jest.*.ts", "**/*.spec.ts", "**/*.spec.tsx"],
+  "exclude": ["node_modules/"]
+}
