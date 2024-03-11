@@ -2,11 +2,12 @@
 
 `react-hook-webstorage` offers a collection of React hooks designed to simplify the management of data on top of the [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) and implements LocalStorage and SessionStorage. Whether you're building a small application or a large-scale project, these hooks provide an efficient way to handle persistent data in your React applications.
 
+Components using the following hooks will rerender when another component changes the value of its controlled storage key. This is useful for updating the UI consistently.
+
 ## Table of Contents
 
 1. [Installation](#installation)
 2. [Usage](#usage)
-   - [Returned Values](#returned-values)
    - [`useLocalStorage`](#uselocalstorage)
    - [`useSessionStorage`](#usesessionstorage)
    - [`useWebStorage`](#usewebstorage)
@@ -29,8 +30,6 @@ All hooks return an object with the following properties:
 - `value`: The current value stored in the storage for the specified key.
 - `setItem`: A function to set a new value for the specified key in the storage.
 - `removeItem`: A function to remove the value for the specified key from the storage.
-
-Components using the following hooks will rerender when another component changes the value of its controlled storage key. This is useful for updating the UI consistently.
 
 ### `useLocalStorage()`
 
