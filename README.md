@@ -7,7 +7,7 @@ Components using the following hooks will rerender when another component change
 ## Table of Contents
 
 1. [Installation](#installation)
-2. [Usage](#usage)
+2. [The hooks](#the-hooks)
    - [`useLocalStorage`](#uselocalstorage)
    - [`useSessionStorage`](#usesessionstorage)
    - [`useWebStorage`](#usewebstorage)
@@ -23,7 +23,7 @@ npm install react-hook-webstorage
 yarn add react-hook-webstorage
 ```
 
-## Usage
+## The hooks
 
 All hooks return an object with the following properties:
 
