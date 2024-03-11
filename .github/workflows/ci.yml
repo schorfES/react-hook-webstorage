@@ -19,7 +19,34 @@ on:
 
 jobs:
   tests:
-    name: Tests and validations
+    name: Tests
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        react: [16, 17, 18]
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v4
+
+      - name: Read .nvmrc
+        id: nvm
+        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+
+      - name: Use Node.js ${{ steps.nvm.outputs.NVMRC }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+
+      - name: Install dependencies with react v${{ matrix.react }}
+        run: npm install && npm install react@${{ matrix.react }}
+
+      - name: Run tests
+        run: make tests
+
+  validation:
+    name: Validations
     runs-on: ubuntu-latest
 
     steps:
@@ -37,12 +64,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Run tests
-        run: make tests
-
-      - name: Run coverage report
-        uses: codecov/codecov-action@v3
 
       - name: Run validations
         run: make validate
