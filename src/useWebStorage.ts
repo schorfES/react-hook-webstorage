@@ -19,7 +19,10 @@ export type StorageProvider = {
 };
 
 export type UseWebStorageHookOptions<T> = {
+  /** Enables handling the storage value as JSON string. */
   parse?: boolean;
+
+  /** The default value if no value is set in the storage. */
   fallback?: StorageValue<T>;
 };
 
