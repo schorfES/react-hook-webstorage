@@ -45,7 +45,8 @@
   },
   "scripts": {
     "validate": "make validate",
-    "test": "make tests"
+    "test": "make tests",
+    "release": "make release"
   },
   "dependencies": {
     "exenv": "^1.2.2"
@@ -71,6 +72,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "prettier": "^3.2.5",
     "react": "^18.2.0",
+    "release-it": "^17.1.1",
     "rollup": "^4.12.0",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-esbuild": "^6.1.1",

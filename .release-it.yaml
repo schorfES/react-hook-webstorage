@@ -1,0 +1,30 @@
+git:
+  commitMessage: 'Release ${version}'
+  requireBranch: 'main'
+  requireUpstream: true
+  requireCleanWorkingDir: true
+  tag: true
+  tagName: 'v${version}'
+  push: true
+
+npm:
+  publish: true
+
+github:
+  release: true,
+  releaseName: '${version}'
+  web: true
+
+hooks:
+  before:init:
+    - git checkout main
+    - git pull --rebase
+    - npm install
+
+  before:bump:
+    - make validate
+    - make tests
+    - make build
+
+  after:release:
+    - git push

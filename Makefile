@@ -32,7 +32,4 @@ build:
 		--config rollup.config.mjs
 
 release: validate tests
-	echo "Implement this!"
-
-prerelease: validate tests
-	echo "Implement this!"
+	./node_modules/.bin/release-it
