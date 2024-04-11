@@ -1,5 +1,7 @@
 # react-hook-webstorage
 
+[![Tests & Validations](https://github.com/schorfES/react-hook-webstorage/actions/workflows/ci.yml/badge.svg)](https://github.com/schorfES/react-hook-webstorage/actions/workflows/ci.yml)
+
 `react-hook-webstorage` offers a collection of React hooks designed to simplify the management of data on top of the [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) and implements LocalStorage and SessionStorage. Whether you're building a small application or a large-scale project, these hooks provide an efficient way to handle persistent data in your React applications.
 
 Components using the following hooks will rerender when another component changes the value of its controlled storage key. This is useful for updating the UI consistently.
