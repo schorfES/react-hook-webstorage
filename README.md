@@ -15,7 +15,7 @@ Components using the following hooks will rerender when another component change
 
 ## Installation
 
-To install `react-hook-webstorage`, use your preferred package manager:
+To install `react-hook-webstorage` as [NPM package](https://www.npmjs.com/package/react-hook-webstorage), use your preferred package manager:
 
 ```bash
 npm install react-hook-webstorage
@@ -37,7 +37,7 @@ All hooks return an object with the following properties:
 import { useLocalStorage } from 'react-hook-webstorage';
 
 function Component() {
-  const { value, setItem, removeItem } = useLocalStorage('-key', {
+  const { value, setItem, removeItem } = useLocalStorage('storage-key', {
     parse: true,
     fallback: 'default-value',
   });
@@ -54,7 +54,7 @@ function Component() {
 import { useSessionStorage } from 'react-hook-webstorage';
 
 function Component() {
-  const { value, setItem, removeItem } = useSessionStorage('-key', {
+  const { value, setItem, removeItem } = useSessionStorage('storage-key', {
     parse: false,
     fallback: null,
   });
