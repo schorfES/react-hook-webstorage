@@ -1,4 +1,5 @@
-import { act, renderHook } from '@testing-library/react';
+import { renderHook } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
 
 import type { StorageProvider } from './useWebStorage';
 import { useWebStorage } from './useWebStorage';
