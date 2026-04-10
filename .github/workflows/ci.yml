@@ -24,7 +24,7 @@ jobs:
 
     strategy:
       matrix:
-        react: [18]
+        react: [18, 19]
 
     steps:
       - name: Git checkout
@@ -40,7 +40,10 @@ jobs:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
       - name: Install dependencies with react v${{ matrix.react }}
-        run: npm install && npm install react@${{ matrix.react }}
+        run: |
+          npm install
+          npm install react@${{ matrix.react }} --save
+          npm install @types/react@{{ matrix.react }} --save-dev
 
       - name: Run tests
         run: make tests
