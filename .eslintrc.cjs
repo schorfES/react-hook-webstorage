@@ -3,15 +3,9 @@ module.exports = {
 
   env: { node: true },
 
-  extends: [
-    'eslint:recommended',
-    'plugin:import/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:import/recommended'],
 
-  plugins: [
-    'import',
-    'react-hooks',
-  ],
+  plugins: ['import', 'react-hooks'],
 
   rules: {},
 
@@ -35,9 +29,7 @@ module.exports = {
       parser: '@typescript-eslint/parser',
       parserOptions: { project: ['./tsconfig.src.json'] },
 
-      plugins: [
-        '@typescript-eslint',
-      ],
+      plugins: ['@typescript-eslint'],
 
       rules: {
         // This rule ensures that hooks are not conditionally called or nested
@@ -61,13 +53,10 @@ module.exports = {
       files: ['jest.*.ts', '*.spec.ts', '*.spec.tsx'],
 
       env: {
-        'jest/globals': true
+        'jest/globals': true,
       },
 
-      extends: [
-        'plugin:jest/recommended',
-        'plugin:jest/style'
-      ],
+      extends: ['plugin:jest/recommended', 'plugin:jest/style'],
 
       parser: '@typescript-eslint/parser',
       parserOptions: { project: ['./tsconfig.test.jest.json'] },
