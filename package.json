@@ -23,26 +23,26 @@
     "typescript",
     "server-side-rendering"
   ],
-  "main": "dist/formats/index.cjs.js",
-  "module": "dist/esm/index.esm.mjs",
-  "umd:main": "dist/formats/umd/index.umd.js",
-  "unpkg": "dist/formats/umd/index.umd.js",
-  "jsdelivr": "dist/formats/umd/index.umd.js",
-  "jsnext:main": "dist/esm/index.esm.mjs",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "umd:main": "./dist/formats/umd/index.js",
+  "unpkg": "./dist/formats/umd/index.js",
+  "jsdelivr": "./dist/formats/umd/index.js",
+  "jsnext:main": "./dist/index.js",
   "source": "src/index.ts",
-  "types": "dist/index.d.ts",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/formats/cjs/index.js"
+    }
+  },
   "sideEffects": false,
   "files": [
     "dist"
   ],
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/esm/index.esm.mjs",
-      "require": "./dist/formats/index.cjs.js"
-    }
-  },
   "scripts": {
     "validate": "make validate",
     "test": "make tests",
