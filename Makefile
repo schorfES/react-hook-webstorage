@@ -10,10 +10,7 @@ validate:
 		--noEmit
 
 	./node_modules/.bin/eslint \
-		. \
-		--ext .js \
-		--ext .ts \
-		--ext .tsx
+		.
 
 	./node_modules/.bin/prettier \
 		. \

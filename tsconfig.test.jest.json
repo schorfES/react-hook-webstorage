@@ -5,7 +5,8 @@
     "jsx": "react",
     "paths": {
       "src/*": ["./src/*"]
-    }
+    },
+    "types": ["jest"]
   },
   "include": ["jest.*.ts", "**/*.spec.ts", "**/*.spec.tsx"],
   "exclude": ["node_modules/"]

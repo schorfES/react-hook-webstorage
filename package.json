@@ -23,26 +23,26 @@
     "typescript",
     "server-side-rendering"
   ],
-  "main": "dist/formats/index.cjs.js",
-  "module": "dist/esm/index.esm.mjs",
-  "umd:main": "dist/formats/umd/index.umd.js",
-  "unpkg": "dist/formats/umd/index.umd.js",
-  "jsdelivr": "dist/formats/umd/index.umd.js",
-  "jsnext:main": "dist/esm/index.esm.mjs",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "umd:main": "./dist/formats/umd/index.js",
+  "unpkg": "./dist/formats/umd/index.js",
+  "jsdelivr": "./dist/formats/umd/index.js",
+  "jsnext:main": "./dist/index.js",
   "source": "src/index.ts",
-  "types": "dist/index.d.ts",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/formats/cjs/index.js"
+    }
+  },
   "sideEffects": false,
   "files": [
     "dist"
   ],
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/esm/index.esm.mjs",
-      "require": "./dist/formats/index.cjs.js"
-    }
-  },
   "scripts": {
     "validate": "make validate",
     "test": "make tests",
@@ -52,33 +52,30 @@
     "exenv": "^1.2.2"
   },
   "devDependencies": {
-    "@jest/types": "^30.0.1",
-    "@rollup/plugin-commonjs": "^28.0.2",
-    "@rollup/plugin-multi-entry": "^6.0.1",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@testing-library/jest-dom": "^6.1.4",
-    "@testing-library/react": "^16.0.1",
+    "@jest/types": "^30.3.0",
+    "@rollup/plugin-commonjs": "^29.0.2",
+    "@rollup/plugin-multi-entry": "^7.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/exenv": "^1.2.2",
-    "@types/jest": "^29.5.10",
-    "@types/react": "^18.2.38",
-    "@typescript-eslint/eslint-plugin": "^8.8.1",
-    "@typescript-eslint/parser": "^8.8.1",
-    "eslint": "^8.56.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jest": "^28.8.3",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^30.2.0",
-    "prettier": "^3.2.5",
+    "@types/jest": "^30.0.0",
+    "@types/react": "^18.3.1",
+    "eslint": "^10.2.0",
+    "eslint-config-xo": "^0.51.0",
+    "eslint-plugin-jest": "^29.15.2",
+    "globals": "^17.5.0",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "prettier": "^3.8.2",
     "react": "^18.3.1",
-    "release-it": "^19.0.2",
-    "rollup": "^4.12.0",
-    "rollup-plugin-dts": "^6.1.0",
-    "rollup-plugin-esbuild": "^6.1.1",
-    "ts-jest": "^29.1.1",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.3.3"
+    "release-it": "^19.2.4",
+    "rollup": "^4.60.1",
+    "rollup-plugin-dts": "^6.4.1",
+    "rollup-plugin-esbuild": "^6.2.1",
+    "ts-jest": "^29.4.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2"
   },
   "peerDependencies": {
     "react": ">=18"
